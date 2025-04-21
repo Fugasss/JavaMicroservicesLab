@@ -1,0 +1,9 @@
+rootProject.name = 'demo'
+
+include ':services:discovery-service',
+        ':services:gateway-service',
+        ':services:driver-service',
+        ':services:team-service',
+        ':services:race-service'
+include ':shared:common'
+
