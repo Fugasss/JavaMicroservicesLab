@@ -24,7 +24,7 @@ Develop a microservice application to display Formula 1 statistics: drivers, tea
 ### Api
 
 All communications are done using gateway.
-Path pattern: http://host:80/api/<service-name>/<endpoint> 
+Path pattern: `http://host:80/api/<service-name>/<endpoint>`
 
 Driver Service:
 - GET /drivers
