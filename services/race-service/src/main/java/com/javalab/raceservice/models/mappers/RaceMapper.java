@@ -55,7 +55,9 @@ public class RaceMapper {
         List<RaceDto> results = new ArrayList<>();
 
         for (Race race : races) {
-            if(race == null) { continue;}
+            if (race == null) {
+                continue;
+            }
             results.add(toDto(race));
         }
 

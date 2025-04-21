@@ -19,7 +19,6 @@ public class Race {
     private LocalDate date;
 
     @OneToMany(mappedBy = "race", cascade = CascadeType.ALL, orphanRemoval = true)
-//    @JoinColumn(foreignKey = @ForeignKey(name = "raceId"))
     private Set<RaceResult> results;
 }
 

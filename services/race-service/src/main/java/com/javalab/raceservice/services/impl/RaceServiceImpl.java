@@ -37,4 +37,9 @@ public class RaceServiceImpl implements RaceService {
 
         return savedRace;
     }
+
+    @Override
+    public Race getLastRace() {
+        return raceRepository.findFirstByOrderByDateDesc().orElse(null);
+    }
 }

@@ -33,4 +33,14 @@ public class RaceController {
         Race entity = driverService.addRace(mapper.toEntity(race));
         return mapper.toDto(entity);
     }
+
+    @GetMapping("/winner")
+    public RaceDto getLastRaceAndWinner() {
+        RaceDto dto = mapper.toDto(driverService.getLastRace());
+
+        if (dto != null)
+            dto.setResults(dto.getResults().stream().filter(driver -> driver.getDriverPosition() == 1).toList());
+
+        return dto;
+    }
 }
