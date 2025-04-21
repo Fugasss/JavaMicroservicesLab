@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: team-service
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:postgres}?currentSchema=team_schema
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    generate-ddl: true
+    properties:
+      hibernate:
+        default_schema: team_schema
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:init.sql
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${SPRING_EUREKA_DEFAULT_ZONE:localhost}:8761/eureka/
+server:
+  port: 8001
